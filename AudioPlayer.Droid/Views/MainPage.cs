@@ -30,10 +30,6 @@ namespace AudioPlayer.Droid
 			this.SetContentView(Resource.Layout.MainPage);
 		}
 
-		/// <summary>
-		/// Sets up all IoC registrations.
-		/// </summary>
-		/// <returns>The io c.</returns>
 		private void setupIoC()
 		{
 			Mvx.RegisterType<ISoundHandler, SoundHandler>();

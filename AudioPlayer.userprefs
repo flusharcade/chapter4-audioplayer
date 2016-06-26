@@ -1,19 +1,13 @@
 ﻿<Properties StartupItem="AudioPlayer.Droid/AudioPlayer.Droid.csproj">
-  <MonoDevelop.Ide.Workbench ActiveDocument="AudioPlayer.Droid/obj/Debug/resourcecache/17E416BEC702E4E795A389CF7789C373/res/layout/abc_screen_toolbar.xml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="AudioPlayer.iOS/Sound/SoundHandler.cs">
     <Files>
-      <File FileName="AudioPlayer.Droid/Sound/SoundHandler.cs" Line="43" Column="28" />
-      <File FileName="AudioPlayer.iOS/Views/MainPage.cs" Line="54" Column="29" />
-      <File FileName="AudioPlayer.Droid/SplashScreenActivity.cs" Line="36" Column="36" />
-      <File FileName="AudioPlayer.iOS/AppDelegate.cs" Line="50" Column="1" />
-      <File FileName="AudioPlayer.Droid/Setup.cs" Line="21" Column="20" />
-      <File FileName="AudioPlayer.Droid/Views/MainPage.cs" Line="22" Column="3" />
-      <File FileName="AudioPlayer.Droid/Resources/values/SplashStyle.xml" Line="4" Column="41" />
-      <File FileName="AudioPlayer.iOS/IosSetup.cs" Line="47" Column="34" />
-      <File FileName="App.cs" Line="17" Column="18" />
-      <File FileName="AudioPlayer.Droid/Properties/AndroidManifest.xml" Line="5" Column="12" />
-      <File FileName="AudioPlayer.Droid/Views/AudioPlayerPage.cs" Line="14" Column="29" />
-      <File FileName="AudioPlayer.Droid/obj/Debug/resourcecache/17E416BEC702E4E795A389CF7789C373/res/drawable/abc_ratingbar_indicator_material.xml" Line="24" Column="1" />
-      <File FileName="AudioPlayer.Droid/obj/Debug/resourcecache/17E416BEC702E4E795A389CF7789C373/res/layout/abc_screen_toolbar.xml" Line="28" Column="1" />
+      <File FileName="AudioPlayer.Droid/Sound/SoundHandler.cs" Line="117" Column="4" />
+      <File FileName="Sound/ISoundHandler.cs" Line="20" Column="12" />
+      <File FileName="ViewModels/AudioPlayerPageViewModel.cs" Line="252" Column="34" />
+      <File FileName="AudioPlayer.Droid/Views/AudioPlayerPage.cs" Line="51" Column="43" />
+      <File FileName="AudioPlayer.Droid/Views/MainPage.cs" Line="21" Column="2" />
+      <File FileName="AudioPlayer.Droid/Controls/CustomSeekBar.cs" Line="67" Column="3" />
+      <File FileName="AudioPlayer.iOS/Sound/SoundHandler.cs" Line="24" Column="94" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
