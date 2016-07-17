@@ -6,15 +6,14 @@
 
 namespace AudioPlayer.Droid
 {
-	using Android.Widget;
-	using Android.OS;
 	using Android.Content.PM;
 	using Android.App;
 
-	using MvvmCross.Core.ViewModels;
-	using MvvmCross.Platform;
 	using MvvmCross.Droid.Views;
 
+	/// <summary>
+	/// Splash screen activity.
+	/// </summary>
 	[Activity(Label = "AudioPlayer.Droid"
 		, MainLauncher = true
 		, Icon = "@drawable/icon"
@@ -23,8 +22,15 @@ namespace AudioPlayer.Droid
 		, ScreenOrientation = ScreenOrientation.Portrait)]
 	public class SplashScreenActivity : MvxSplashScreenActivity
 	{
+		#region Constructors
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:AudioPlayer.Droid.SplashScreenActivity"/> class.
+		/// </summary>
 		public SplashScreenActivity(): base(Resource.Layout.SplashScreen)
 		{
 		}
+
+		#endregion
 	}
 }

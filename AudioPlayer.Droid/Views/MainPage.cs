@@ -8,32 +8,51 @@ namespace AudioPlayer.Droid
 {
 	using Android.App;
 	using Android.OS;
-	using Android.Widget;
 
 	using MvvmCross.Droid.Views;
-
-	using AudioPlayer.Portable.ViewModels;
 	using MvvmCross.Platform;
-	using AudioPlayer.Portable.Sound;
+
 	using AudioPlayer.Droid.Sound;
+
+	using AudioPlayer.Portable.Sound;
 	using AudioPlayer.Portable;
 
+	/// <summary>
+	/// Main page.
+	/// </summary>
 	[Activity(Label = "Audio Player")]
 	public class MainPage : MvxActivity
 	{
+		#region Protected Methods
+
+		/// <summary>
+		/// Called when activity is created.
+		/// </summary>
+		/// <returns>The create.</returns>
+		/// <param name="bundle">Bundle.</param>
 		protected override void OnCreate(Bundle bundle)
 		{
 			base.OnCreate(bundle);
 
-			this.setupIoC();
+			SetupIoC();
 
-			this.SetContentView(Resource.Layout.MainPage);
+			SetContentView(Resource.Layout.MainPage);
 		}
 
-		private void setupIoC()
+		#endregion
+
+		#region Private Methods
+
+		/// <summary>
+		/// Setups the io c.
+		/// </summary>
+		/// <returns>The io c.</returns>
+		private void SetupIoC()
 		{
 			Mvx.RegisterType<ISoundHandler, SoundHandler>();
 			PortableMvxIoCRegistrations.InitIoC();
 		}
+
+		#endregion
 	}
 }

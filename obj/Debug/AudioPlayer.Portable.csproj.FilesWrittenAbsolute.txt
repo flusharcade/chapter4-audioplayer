@@ -7,3 +7,12 @@
 /Users/mww121/Projects/AudioPlayer/bin/Debug/MvvmCross.Core.dll
 /Users/mww121/Projects/AudioPlayer/bin/Debug/MvvmCross.Binding.dll
 /Users/mww121/Projects/AudioPlayer/bin/Debug/MvvmCross.Localization.dll
+/Users/mww121/Desktop/FlushArcade/PACKT Publishing/Xamarin Blueprints/Chapters/Chapter 4/AudioPlayer/obj/Debug/.NETPortable,Version=v4.5,Profile=Profile78.AssemblyAttribute.cs
+/Users/mww121/Desktop/FlushArcade/PACKT Publishing/Xamarin Blueprints/Chapters/Chapter 4/AudioPlayer/bin/Debug/AudioPlayer.Portable.dll.mdb
+/Users/mww121/Desktop/FlushArcade/PACKT Publishing/Xamarin Blueprints/Chapters/Chapter 4/AudioPlayer/bin/Debug/AudioPlayer.Portable.dll
+/Users/mww121/Desktop/FlushArcade/PACKT Publishing/Xamarin Blueprints/Chapters/Chapter 4/AudioPlayer/obj/Debug/AudioPlayer.Portable.dll
+/Users/mww121/Desktop/FlushArcade/PACKT Publishing/Xamarin Blueprints/Chapters/Chapter 4/AudioPlayer/obj/Debug/AudioPlayer.Portable.dll.mdb
+/Users/mww121/Desktop/FlushArcade/PACKT Publishing/Xamarin Blueprints/Chapters/Chapter 4/AudioPlayer/bin/Debug/MvvmCross.Platform.dll
+/Users/mww121/Desktop/FlushArcade/PACKT Publishing/Xamarin Blueprints/Chapters/Chapter 4/AudioPlayer/bin/Debug/MvvmCross.Core.dll
+/Users/mww121/Desktop/FlushArcade/PACKT Publishing/Xamarin Blueprints/Chapters/Chapter 4/AudioPlayer/bin/Debug/MvvmCross.Binding.dll
+/Users/mww121/Desktop/FlushArcade/PACKT Publishing/Xamarin Blueprints/Chapters/Chapter 4/AudioPlayer/bin/Debug/MvvmCross.Localization.dll

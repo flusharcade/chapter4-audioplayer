@@ -17,22 +17,42 @@ namespace AudioPlayer.Droid.Sound
 
 	public class SoundHandler : ISoundHandler
 	{
+		#region Private Properties
+
+		/// <summary>
+		/// The media player.
+		/// </summary>
 		private MediaPlayer mediaPlayer;
 
+		#endregion
+
+		#region Public Properties
+
+		/// <summary>
+		/// Gets or sets the is playing.
+		/// </summary>
+		/// <value>The is playing.</value>
 		public bool IsPlaying { get; set; }
 
+		#endregion
+
+		#region Public Methods
+
+		/// <summary>
+		/// Load the audio.
+		/// </summary>
 		public void Load()
 		{
 			try
 			{
-				this.mediaPlayer = new MediaPlayer();
-				this.mediaPlayer.SetAudioStreamType(Stream.Music);
+				mediaPlayer = new MediaPlayer();
+				mediaPlayer.SetAudioStreamType(Stream.Music);
 
 				AssetFileDescriptor descriptor = Android.App.Application.Context.Assets.OpenFd("Moby - The Only Thing.mp3");
-				this.mediaPlayer.SetDataSource(descriptor.FileDescriptor, descriptor.StartOffset, descriptor.Length);
+				mediaPlayer.SetDataSource(descriptor.FileDescriptor, descriptor.StartOffset, descriptor.Length);
 
-				this.mediaPlayer.Prepare();
-				this.mediaPlayer.SetVolume(1f, 1f);
+				mediaPlayer.Prepare();
+				mediaPlayer.SetVolume(1f, 1f);
 			}
 			catch (Exception e)
 			{
@@ -40,80 +60,107 @@ namespace AudioPlayer.Droid.Sound
 			}
 		}
 
+		/// <summary>
+		/// Play/Pauses the audio.
+		/// </summary>
+		/// <returns>The pause.</returns>
 		public void PlayPause()
 		{
-			if (this.mediaPlayer != null)
+			if (mediaPlayer != null)
 			{
-				if (this.IsPlaying)
+				if (IsPlaying)
 				{
-					this.mediaPlayer.Pause();
+					mediaPlayer.Pause();
 				}
 				else
 				{
-					this.mediaPlayer.Start();
+					mediaPlayer.Start();
 				}
 
-				this.IsPlaying = !this.IsPlaying;
+				IsPlaying = !IsPlaying;
 			}
 		}
 
+		/// <summary>
+		/// Stop this audio.
+		/// </summary>
 		public void Stop()
 		{
-			if (this.mediaPlayer != null)
+			if (mediaPlayer != null)
 			{
-				this.mediaPlayer.Stop();
-				this.mediaPlayer.Reset();
+				mediaPlayer.Stop();
+				mediaPlayer.Reset();
 			}
 		}
 
+		/// <summary>
+		/// Returns the audio duration.
+		/// </summary>
 		public double Duration()
 		{
-			if (this.mediaPlayer != null)
+			if (mediaPlayer != null)
 			{
-				return this.mediaPlayer.Duration / 1000;
+				return mediaPlayer.Duration / 1000;
 			}
 
 			return 0;
 		}
 
+		/// <summary>
+		/// Sets the audio position.
+		/// </summary>
+		/// <returns>The position.</returns>
+		/// <param name="value">Value.</param>
 		public void SetPosition(double value)
 		{
-			if (this.mediaPlayer != null)
+			if (mediaPlayer != null)
 			{
-				this.mediaPlayer.SeekTo((int)value * 1000);
+				mediaPlayer.SeekTo((int)value * 1000);
 			}
 		}
 
+		/// <summary>
+		/// Returns current position of audio.
+		/// </summary>
+		/// <returns>The position.</returns>
 		public double CurrentPosition()
 		{
-			if (this.mediaPlayer != null)
+			if (mediaPlayer != null)
 			{
-				return this.mediaPlayer.CurrentPosition / 1000;
+				return mediaPlayer.CurrentPosition / 1000;
 			}
 
 			return 0;
 		}
 
+		/// <summary>
+		/// Fast forwards audio position.
+		/// </summary>
 		public void Forward()
 		{
-			if (this.mediaPlayer != null)
+			if (mediaPlayer != null)
 			{
-				this.IsPlaying = false;
+				IsPlaying = false;
 
-				this.mediaPlayer.Pause();
-				this.mediaPlayer.SeekTo(this.mediaPlayer.Duration);
+				mediaPlayer.Pause();
+				mediaPlayer.SeekTo(mediaPlayer.Duration);
 			}
 		}
 
+		/// <summary>
+		/// Rewind the audio position.
+		/// </summary>
 		public void Rewind()
 		{
-			if (this.mediaPlayer != null)
+			if (mediaPlayer != null)
 			{
-				this.IsPlaying = false;
+				IsPlaying = false;
 
-				this.mediaPlayer.Pause();
-				this.mediaPlayer.SeekTo(0);
+				mediaPlayer.Pause();
+				mediaPlayer.SeekTo(0);
 			}
 		}
+
+		#endregion
 	}
 }

@@ -8,26 +8,51 @@ namespace AudioPlayer.Portable.ViewModels
 {
 	using MvvmCross.Core.ViewModels;
 
+	/// <summary>
+	/// Main page view model.
+	/// </summary>
 	public class MainPageViewModel : MvxViewModel
 	{
 		#region Private Properties
 
+		/// <summary>
+		/// The title.
+		/// </summary>
 		private string title = "Welcome";
 
+		/// <summary>
+		/// The description message.
+		/// </summary>
 		private string descriptionMessage = "Welcome to the Music Room";
 
+		/// <summary>
+		/// The audio player title.
+		/// </summary>
 		private string audioPlayerTitle = "Audio Player";
 
+		/// <summary>
+		/// The exit title.
+		/// </summary>
 		private string exitTitle = "Exit";
 
+		/// <summary>
+		/// The audio player command.
+		/// </summary>
 		private MvxCommand audioPlayerCommand;
 
+		/// <summary>
+		/// The exit command.
+		/// </summary>
 		private MvxCommand exitCommand;
 
 		#endregion
 
 		#region Public Properties
 
+		/// <summary>
+		/// Gets or sets the title.
+		/// </summary>
+		/// <value>The title.</value>
 		public string Title
 		{
 			get
@@ -44,6 +69,10 @@ namespace AudioPlayer.Portable.ViewModels
 			}
 		}
 
+		/// <summary>
+		/// Gets or sets the description message.
+		/// </summary>
+		/// <value>The description message.</value>
 		public string DescriptionMessage
 		{
 			get 
@@ -60,6 +89,10 @@ namespace AudioPlayer.Portable.ViewModels
 			}
 		}
 
+		/// <summary>
+		/// Gets or sets the audio player title.
+		/// </summary>
+		/// <value>The audio player title.</value>
 		public string AudioPlayerTitle
 		{
 			get 
@@ -76,6 +109,10 @@ namespace AudioPlayer.Portable.ViewModels
 			}
 		}
 
+		/// <summary>
+		/// Gets or sets the exit title.
+		/// </summary>
+		/// <value>The exit title.</value>
 		public string ExitTitle
 		{
 			get 
@@ -92,11 +129,15 @@ namespace AudioPlayer.Portable.ViewModels
 			}
 		}
 
+		/// <summary>
+		/// Gets or sets the audio player command.
+		/// </summary>
+		/// <value>The audio player command.</value>
 		public MvxCommand AudioPlayerCommand
 		{
 			get
 			{
-				return this.audioPlayerCommand;
+				return audioPlayerCommand;
 			}
 
 			set
@@ -109,11 +150,15 @@ namespace AudioPlayer.Portable.ViewModels
 			}
 		}
 
+		/// <summary>
+		/// Gets or sets the exit command.
+		/// </summary>
+		/// <value>The exit command.</value>
 		public MvxCommand ExitCommand
 		{
 			get
 			{
-				return this.exitCommand;
+				return exitCommand;
 			}
 
 			set
@@ -130,15 +175,18 @@ namespace AudioPlayer.Portable.ViewModels
 
 		#region Constructors
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:AudioPlayer.Portable.ViewModels.MainPageViewModel"/> class.
+		/// </summary>
 		public MainPageViewModel ()
 		{
-			this.exitCommand = new MvxCommand (() =>
+			exitCommand = new MvxCommand (() =>
 			{
 				// exit the application
 				Close(this);
 			});
 
-			this.audioPlayerCommand = new MvxCommand(() =>
+			audioPlayerCommand = new MvxCommand(() =>
 			{
 				ShowViewModel<AudioPlayerPageViewModel>();
 			});

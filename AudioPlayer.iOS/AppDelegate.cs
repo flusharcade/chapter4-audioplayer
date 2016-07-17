@@ -15,21 +15,27 @@ namespace AudioPlayer.iOS
 
 	using MvvmCross.Platform;
 
-	using AudioPlayer.iOS;
 	using AudioPlayer.iOS.Sound;
 
 	using AudioPlayer.Portable.Sound;
 	using AudioPlayer.Portable;
 
-	// The UIApplicationDelegate for the application. This class is responsible for launching the
-	// User Interface of the application, as well as listening (and optionally responding) to application events from iOS.
-	[Register ("AppDelegate")]
+	/// <summary>
+	/// App delegate.
+	/// </summary>
+	[Register("AppDelegate")]
 	public class AppDelegate : MvxApplicationDelegate
 	{
+		#region Private Properties
+
 		/// <summary>
 		/// The window.
 		/// </summary>
-		protected UIWindow window;
+		private UIWindow _window;
+
+		#endregion
+
+		#region Public Methods
 
 		/// <summary>
 		/// Finisheds the launching.
@@ -37,30 +43,36 @@ namespace AudioPlayer.iOS
 		/// <returns><c>true</c>, if launching was finisheded, <c>false</c> otherwise.</returns>
 		/// <param name="application">Application.</param>
 		/// <param name="launchOptions">Launch options.</param>
-		public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
+		public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
 		{
-			this.window = new UIWindow (UIScreen.MainScreen.Bounds);
+			_window = new UIWindow(UIScreen.MainScreen.Bounds);
 
-			var setup = new IosSetup(this, window);
+			var setup = new IosSetup(this, _window);
 			setup.Initialize();
 
 			var startup = Mvx.Resolve<IMvxAppStart>();
 			startup.Start();
-			this.setupIoC();
+			SetupIoC();
 
-			this.window.MakeKeyAndVisible ();
+			_window.MakeKeyAndVisible();
 
 			return true;
 		}
+
+		#endregion
+
+		#region Private Methods
 
 		/// <summary>
 		/// Setups the registrations.
 		/// </summary>
 		/// <returns>The registrations.</returns>
-		private void setupIoC()
+		private void SetupIoC()
 		{
 			Mvx.RegisterType<ISoundHandler, SoundHandler>();
 			PortableMvxIoCRegistrations.InitIoC();
 		}
+
+		#endregion
 	}
 }

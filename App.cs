@@ -6,16 +6,21 @@
 
 namespace AudioPlayer.Portable
 {
-	using System;
-
-	using MvvmCross.Core.ViewModels;
-
 	using MvvmCross.Platform.IoC;
+	using MvvmCross.Core.ViewModels;
 
 	using AudioPlayer.Portable.ViewModels;
 
+	/// <summary>
+	/// App.
+	/// </summary>
     public class App : MvxApplication
     {
+		#region Public Methods
+
+		/// <summary>
+		/// Initialize this instance.
+		/// </summary>
         public override void Initialize()
         {
             CreatableTypes()
@@ -25,5 +30,7 @@ namespace AudioPlayer.Portable
 				
 			RegisterAppStart<MainPageViewModel>();
         }
+
+		#endregion
     }
 }

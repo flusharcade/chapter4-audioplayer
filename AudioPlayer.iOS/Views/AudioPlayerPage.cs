@@ -25,6 +25,8 @@ namespace AudioPlayer.iOS.Views
 	[MvxViewFor(typeof(AudioPlayerPageViewModel))]
 	public class AudioPlayerPage : MvxViewController
 	{
+		#region Private Properties
+
 		/// <summary>
 		/// The play button.
 		/// </summary>
@@ -44,6 +46,10 @@ namespace AudioPlayer.iOS.Views
 		/// The model.
 		/// </summary>
 		private AudioPlayerPageViewModel model;
+
+		#endregion
+
+		#region Public Methods
 
 		/// <summary>
 		/// Views the did load.
@@ -132,7 +138,7 @@ namespace AudioPlayer.iOS.Views
 				{"fastForwardButton", fastForwardButton}
 			};
 
-			this.View.Add(mainView);
+			View.Add(mainView);
 
 			mainView.Add(imageView);
 			mainView.Add(descriptionLabel);
@@ -145,7 +151,7 @@ namespace AudioPlayer.iOS.Views
 			buttonView.Add(rewindButton);
 			buttonView.Add(fastForwardButton);
 
-			this.View.AddConstraints(
+			View.AddConstraints(
 				NSLayoutConstraint.FromVisualFormat("V:|[mainView]|", NSLayoutFormatOptions.DirectionLeftToRight, null, views)
 				.Concat(NSLayoutConstraint.FromVisualFormat("H:|[mainView]|", NSLayoutFormatOptions.AlignAllTop, null, views))
 				.ToArray());
@@ -181,20 +187,8 @@ namespace AudioPlayer.iOS.Views
 			set.Bind(fastForwardButton).To(vm => vm.ForwardCommand);
 			set.Apply();
 
-			this.model = (AudioPlayerPageViewModel)this.DataContext;
+			model = (AudioPlayerPageViewModel)DataContext;
 		}
-
-		/// <summary>
-		/// Progresses the slider value changed.
-		/// </summary>
-		/// <returns>The slider value changed.</returns>
-		/// <param name="sender">Sender.</param>
-		/// <param name="e">E.</param>
-		private void progressSliderValueChanged(object sender, EventArgs e)
-		{
-			this.model.UpdateAudioPosition(this.progressSlider.Value);
-		}
-
 
 		/// <summary>
 		/// Views the did appear.
@@ -203,7 +197,7 @@ namespace AudioPlayer.iOS.Views
 		/// <param name="animated">Animated.</param>
 		public override void ViewDidAppear(bool animated)
 		{
-			this.model.Load();
+			model.Load();
 
 			base.ViewDidAppear(animated);
 		}
@@ -215,9 +209,24 @@ namespace AudioPlayer.iOS.Views
 		/// <param name="animated">Animated.</param>
 		public override void ViewDidDisappear(bool animated)
 		{
-			this.model.Dispose();
+			model.Dispose();
 
 			base.ViewDidDisappear(animated);
+		}
+
+		#endregion
+
+		#region Private Methods
+
+		/// <summary>
+		/// Progresses the slider value changed.
+		/// </summary>
+		/// <returns>The slider value changed.</returns>
+		/// <param name="sender">Sender.</param>
+		/// <param name="e">E.</param>
+		private void progressSliderValueChanged(object sender, EventArgs e)
+		{
+			model.UpdateAudioPosition(progressSlider.Value);
 		}
 
 		/// <summary>
@@ -243,5 +252,7 @@ namespace AudioPlayer.iOS.Views
 			playing = false;
 			playButton.SetImage(UIImage.FromFile("play.png"), UIControlState.Normal);
 		}
+
+		#endregion
 	}
 }

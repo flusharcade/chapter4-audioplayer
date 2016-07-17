@@ -1,4 +1,4 @@
-﻿<Properties StartupItem="AudioPlayer.Droid/AudioPlayer.Droid.csproj">
+﻿<Properties StartupItem="AudioPlayer.iOS/AudioPlayer.iOS.csproj">
   <MonoDevelop.Ide.Workbench ActiveDocument="AudioPlayer.iOS/Sound/SoundHandler.cs">
     <Files>
       <File FileName="AudioPlayer.Droid/Sound/SoundHandler.cs" Line="117" Column="4" />
@@ -11,10 +11,8 @@
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.AudioPlayer.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.c3739630" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.AudioPlayer.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.TA38503PQ6" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
     <Watch file="../../Desktop/Development/Telstra/HealthConnex/MyCareManager/MyCareManager.Portable/Repositories/AccountRepository/AccountRepository.cs" line="214" offsetX="986" offsetY="3195" expression="this.webServiceUrl.AbsoluteUri" liveUpdate="False" />
     <Watch file="../../Desktop/Development/Telstra/HealthConnex/MyCareManager/MyCareManager.Portable/Repositories/TargetRangeRepository/TargetRangeRepository.cs" line="107" offsetX="950" offsetY="1590" expression="message.RequestUri" liveUpdate="False" />
@@ -23,5 +21,5 @@
     <Watch file="../../Desktop/Development/Telstra/HealthConnex/MyCareManager/MyCareManager.Portable/Repositories/ReminderRepository/ReminderRepository.cs" line="115" offsetX="972" offsetY="1710" expression="message.RequestUri" liveUpdate="False" />
     <Watch file="../../Desktop/Development/Telstra/HealthConnex/MyCareManager/MyCareManager.Portable/Repositories/SettingsRepository/SettingsRepository.cs" line="98" offsetX="676" offsetY="1455" expression="settingsUri" liveUpdate="False" />
   </MonoDevelop.Ide.DebuggingService.PinnedWatches>
-  <MonoDevelop.Ide.ItemProperties.AudioPlayer.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.4D94D0EF-12F5-45B6-83B6-58F50C2938C0" />
+  <MonoDevelop.Ide.ItemProperties.AudioPlayer.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.A10AC0B6-78D2-48A4-92EF-01D011AFA406" />
 </Properties>

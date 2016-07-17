@@ -14,154 +14,219 @@ namespace AudioPlayer.Portable.ViewModels
 
 	using AudioPlayer.Portable.Sound;
 
+	/// <summary>
+	/// Audio player page view model.
+	/// </summary>
 	public class AudioPlayerPageViewModel : MvxViewModel
 	{
 		#region Private Properties
 
-		private readonly ISoundHandler soundHandler;
+		/// <summary>
+		/// The sound handler.
+		/// </summary>
+		private readonly ISoundHandler _soundHandler;
 
-		private string title = "Audio Player";
+		/// <summary>
+		/// The title.
+		/// </summary>
+		private string _title = "Audio Player";
 
-		private string descriptionMessage = "Moby - The Only Thing";
+		/// <summary>
+		/// The description message.
+		/// </summary>
+		private string _descriptionMessage = "Moby - The Only Thing";
 
-		private MvxCommand playPauseCommand;
+		/// <summary>
+		/// The play pause command.
+		/// </summary>
+		private MvxCommand _playPauseCommand;
 
-		private MvxCommand forwardCommand;
+		/// <summary>
+		/// The forward command.
+		/// </summary>
+		private MvxCommand _forwardCommand;
 
-		private MvxCommand rewindCommand;
+		/// <summary>
+		/// The rewind command.
+		/// </summary>
+		private MvxCommand _rewindCommand;
 
-		private float audioPosition;
+		/// <summary>
+		/// The audio position.
+		/// </summary>
+		private float _audioPosition;
 
-		private double currentTime;
+		/// <summary>
+		/// The current time.
+		/// </summary>
+		private double _currentTime;
 
-		private double endTime;
+		/// <summary>
+		/// The end time.
+		/// </summary>
+		private double _endTime;
 
-		private bool updating;
+		/// <summary>
+		/// The updating.
+		/// </summary>
+		private bool _updating;
 
 		#endregion
 
 		#region Public Properties
 
+		/// <summary>
+		/// Gets or sets the title.
+		/// </summary>
+		/// <value>The title.</value>
 		public string Title
 		{
 			get
 			{
-				return title;
+				return _title;
 			}
 			set
 			{
-				if (!value.Equals(title))
+				if (!value.Equals(_title))
 				{
-					descriptionMessage = value;
+					_descriptionMessage = value;
 					RaisePropertyChanged(() => Title);
 				}
 			}
 		}
 
+		/// <summary>
+		/// Gets or sets the description message.
+		/// </summary>
+		/// <value>The description message.</value>
 		public string DescriptionMessage
 		{
 			get 
 			{ 
-				return descriptionMessage; 
+				return _descriptionMessage; 
 			} 
 			set 
 			{ 
-				if (!value.Equals(descriptionMessage))
+				if (!value.Equals(_descriptionMessage))
 				{
-					descriptionMessage = value;
+					_descriptionMessage = value;
 					RaisePropertyChanged (() => DescriptionMessage);
 				}
 			}
 		}
 
+		/// <summary>
+		/// Gets or sets the play pause command.
+		/// </summary>
+		/// <value>The play pause command.</value>
 		public MvxCommand PlayPauseCommand
 		{
 			get
 			{
-				return this.playPauseCommand;
+				return _playPauseCommand;
 			}
 
 			set
 			{
-				if (!value.Equals(playPauseCommand))
+				if (!value.Equals(_playPauseCommand))
 				{
-					playPauseCommand = value;
+					_playPauseCommand = value;
 					RaisePropertyChanged (() => PlayPauseCommand);
 				}
 			}
 		}
 
+		/// <summary>
+		/// Gets or sets the rewind command.
+		/// </summary>
+		/// <value>The rewind command.</value>
 		public MvxCommand RewindCommand
 		{
 			get
 			{
-				return this.rewindCommand;
+				return _rewindCommand;
 			}
 
 			set
 			{
-				if (!value.Equals(rewindCommand))
+				if (!value.Equals(_rewindCommand))
 				{
-					rewindCommand = value;
+					_rewindCommand = value;
 					RaisePropertyChanged(() => RewindCommand);
 				}
 			}
 		}
 
+		/// <summary>
+		/// Gets or sets the forward command.
+		/// </summary>
+		/// <value>The forward command.</value>
 		public MvxCommand ForwardCommand
 		{
 			get
 			{
-				return this.forwardCommand;
+				return _forwardCommand;
 			}
 
 			set
 			{
-				if (!value.Equals(forwardCommand))
+				if (!value.Equals(_forwardCommand))
 				{
-					forwardCommand = value;
+					_forwardCommand = value;
 					RaisePropertyChanged(() => ForwardCommand);
 				}
 			}
 		}
 
+		/// <summary>
+		/// Gets or sets the audio position.
+		/// </summary>
+		/// <value>The audio position.</value>
 		public float AudioPosition
 		{
 			get
 			{
-				return this.audioPosition;
+				return _audioPosition;
 			}
 
 			set
 			{
-				if (!value.Equals(audioPosition))
+				if (!value.Equals(_audioPosition))
 				{
-					audioPosition = value;
+					_audioPosition = value;
 					RaisePropertyChanged(() => AudioPosition);
 				}
 			}
 		}
 
+		/// <summary>
+		/// Gets the current time string.
+		/// </summary>
+		/// <value>The current time string.</value>
 		public string CurrentTimeStr
 		{
 			get
 			{
-				return TimeSpan.FromSeconds(this.CurrentTime).ToString("mm\\:ss");
+				return TimeSpan.FromSeconds(CurrentTime).ToString("mm\\:ss");
 			}
 		}
 
+		/// <summary>
+		/// Gets or sets the current time.
+		/// </summary>
+		/// <value>The current time.</value>
 		public double CurrentTime
 		{
 			get
 			{
-				return this.currentTime;
+				return _currentTime;
 			}
 
 			set
 			{
-				if (!value.Equals(currentTime))
+				if (!value.Equals(_currentTime))
 				{
-					currentTime = value;
+					_currentTime = value;
 					RaisePropertyChanged(() => CurrentTime);
 					// everytime we change the current time, the time span values must also update
 					RaisePropertyChanged(() => CurrentTimeStr);
@@ -169,26 +234,34 @@ namespace AudioPlayer.Portable.ViewModels
 			}
 		}
 
+		/// <summary>
+		/// Gets the end time string.
+		/// </summary>
+		/// <value>The end time string.</value>
 		public string EndTimeStr
 		{
 			get
 			{
-				return TimeSpan.FromSeconds(this.EndTime).ToString("mm\\:ss");
+				return TimeSpan.FromSeconds(EndTime).ToString("mm\\:ss");
 			}
 		}
 
+		/// <summary>
+		/// Gets or sets the end time.
+		/// </summary>
+		/// <value>The end time.</value>
 		public double EndTime
 		{
 			get
 			{
-				return this.endTime;
+				return _endTime;
 			}
 
 			set
 			{
-				if (!value.Equals(endTime))
+				if (!value.Equals(_endTime))
 				{
-					endTime = value;
+					_endTime = value;
 					RaisePropertyChanged(() => EndTime);
 					RaisePropertyChanged(() => EndTimeStr);
 				}
@@ -199,44 +272,48 @@ namespace AudioPlayer.Portable.ViewModels
 
 		#region Constructors
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:AudioPlayer.Portable.ViewModels.AudioPlayerPageViewModel"/> class.
+		/// </summary>
+		/// <param name="soundHandler">Sound handler.</param>
 		public AudioPlayerPageViewModel (ISoundHandler soundHandler)
 		{
-			this.soundHandler = soundHandler;
+			_soundHandler = soundHandler;
 
 			// load sound file
-			this.soundHandler.Load();
+			soundHandler.Load();
 
-			this.EndTime = this.soundHandler.Duration();
+			EndTime = soundHandler.Duration();
 
-			this.playPauseCommand = new MvxCommand(() =>
+			_playPauseCommand = new MvxCommand(() =>
 			{
 				// start/stop UI updates if the audio is not playing
 				if (soundHandler.IsPlaying)
 				{
-					this.updating = false;
+					_updating = false;
 				}
 				else
 				{
-					this.Load();
+					Load();
 				}
 
 				soundHandler.PlayPause();
 			});
 
-			this.rewindCommand = new MvxCommand(() =>
+			_rewindCommand = new MvxCommand(() =>
 			{
 				// set current time to the beginning
-				this.CurrentTime = 0;
-				this.soundHandler.Rewind();
-				this.updating = false;
+				CurrentTime = 0;
+				soundHandler.Rewind();
+				_updating = false;
 			});
 
-			this.forwardCommand = new MvxCommand(() =>
+			_forwardCommand = new MvxCommand(() =>
 			{
 				// set current time to the end
-				this.CurrentTime = this.soundHandler.Duration();
-				this.soundHandler.Forward();
-				this.updating = false;
+				CurrentTime = soundHandler.Duration();
+				soundHandler.Forward();
+				_updating = false;
 			});
 		}
 
@@ -251,7 +328,7 @@ namespace AudioPlayer.Portable.ViewModels
 		/// <param name="value">Value.</param>
 		public void UpdateAudioPosition(double value)
 		{
-			this.soundHandler.SetPosition(value);
+			_soundHandler.SetPosition(value);
 		}
 
 		/// <summary>
@@ -260,26 +337,26 @@ namespace AudioPlayer.Portable.ViewModels
 		public void Load()
 		{
 			// make sure we only start the loop once
-			if (!this.updating)
+			if (!_updating)
 			{
-				this.updating = true;
+				_updating = true;
 
 				// we are going to post a regular update to the UI witht he current time
 				var context = SynchronizationContext.Current;
 
 				Task.Run(async () =>
 				{
-					while (this.updating)
+					while (_updating)
 					{
 						await Task.Delay(1000);
 
 						context.Post(unused =>
 						{
-							var current = this.soundHandler.CurrentPosition(); ;
+							var current = _soundHandler.CurrentPosition(); ;
 
 							if (current > 0)
 							{
-								this.CurrentTime = current;
+								CurrentTime = current;
 							}
 
 						}, null);
@@ -294,8 +371,8 @@ namespace AudioPlayer.Portable.ViewModels
 		/// <returns>The updating.</returns>
 		public void Dispose()
 		{
-			this.updating = false;
-			this.soundHandler.Stop();
+			_updating = false;
+			_soundHandler.Stop();
 		}
 
 		#endregion

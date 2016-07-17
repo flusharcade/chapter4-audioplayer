@@ -6,97 +6,144 @@
 
 namespace AudioPlayer.iOS.Sound
 {
-	using System;
-	using System.Diagnostics;
-
 	using AudioPlayer.Portable.Sound;
 	using AVFoundation;
 	using Foundation;
 
+	/// <summary>
+	/// Sound handler.
+	/// </summary>
 	public class SoundHandler : ISoundHandler
 	{
+		#region Private Properties
+
+		/// <summary>
+		/// The audio player.
+		/// </summary>
 		private AVAudioPlayer audioPlayer;
 
+		#endregion
+
+		#region Public Properties
+
+		/// <summary>
+		/// Gets or sets the is playing.
+		/// </summary>
+		/// <value>The is playing.</value>
 		public bool IsPlaying { get; set; }
 
+		#endregion
+
+		#region Public Methods
+
+		/// <summary>
+		/// Load the audio.
+		/// </summary>
 		public void Load()
 		{
-			this.audioPlayer = AVAudioPlayer.FromUrl(NSUrl.FromFilename("Moby - The Only Thing.mp3"));
+			audioPlayer = AVAudioPlayer.FromUrl(NSUrl.FromFilename("Moby - The Only Thing.mp3"));
 		}
 
+		/// <summary>
+		/// Play/Pauses the audio.
+		/// </summary>
+		/// <returns>The pause.</returns>
 		public void PlayPause()
 		{
-			if (this.audioPlayer != null)
+			if (audioPlayer != null)
 			{
-				if (this.IsPlaying)
+				if (IsPlaying)
 				{
-					this.audioPlayer.Stop();
+					audioPlayer.Stop();
 				}
 				else
 				{
-					this.audioPlayer.Play();
+					audioPlayer.Play();
 				}
 
-				this.IsPlaying = !this.IsPlaying;
+				IsPlaying = !IsPlaying;
 			}
 		}
 
+		/// <summary>
+		/// Stop this audio.
+		/// </summary>
 		public void Stop()
 		{
-			if (this.audioPlayer != null)
+			if (audioPlayer != null)
 			{
-				this.audioPlayer.Stop();
+				audioPlayer.Stop();
 			}
 		}
 
+		/// <summary>
+		/// Returns the audio duration.
+		/// </summary>
 		public double Duration()
 		{
-			if (this.audioPlayer != null)
+			if (audioPlayer != null)
 			{
-				return this.audioPlayer.Duration;
+				return audioPlayer.Duration;
 			}
 
 			return 0;
 		}
 
+		/// <summary>
+		/// Sets the audio position.
+		/// </summary>
+		/// <returns>The position.</returns>
+		/// <param name="value">Value.</param>
 		public void SetPosition(double value)
 		{
-			if (this.audioPlayer != null)
+			if (audioPlayer != null)
 			{
-				this.audioPlayer.CurrentTime = value;
+				audioPlayer.CurrentTime = value;
 			}
 		}
 
+		/// <summary>
+		/// Returns current position of audio.
+		/// </summary>
+		/// <returns>The position.</returns>
 		public double CurrentPosition()
 		{
-			if (this.audioPlayer != null)
+			if (audioPlayer != null)
 			{
-				return this.audioPlayer.CurrentTime;
+				return audioPlayer.CurrentTime;
 			}
 
 			return 0;
 		}
 
+		/// <summary>
+		/// Fast forwards audio position.
+		/// </summary>
 		public void Forward()
 		{
-			if (this.audioPlayer != null)
+			if (audioPlayer != null)
 			{
-				this.IsPlaying = false;
+				IsPlaying = false;
 
-				this.audioPlayer.Stop();
-				this.audioPlayer.CurrentTime = this.audioPlayer.Duration;
+				audioPlayer.Stop();
+				audioPlayer.CurrentTime = audioPlayer.Duration;
 			}
 		}
 
+		/// <summary>
+		/// Rewind the audio position.
+		/// </summary>
 		public void Rewind()
 		{
-			if (this.audioPlayer != null)
+			if (audioPlayer != null)
 			{
-				this.IsPlaying = false;
+				IsPlaying = false;
 
-				this.audioPlayer.Stop();
-				this.audioPlayer.CurrentTime = 0;
+				audioPlayer.Stop();
+				audioPlayer.CurrentTime = 0;
 			}
 		}
+
+		#endregion
 	}
 }

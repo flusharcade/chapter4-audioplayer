@@ -1,10 +1,10 @@
-# Version: 9.8.0.294 (cycle7: 6950f7b)
-# [first argument, ignore] # /Users/mww121/Projects/AudioPlayer/AudioPlayer.iOS/mtouch.exe
-/Library/Frameworks/Xamarin.iOS.framework/Versions/9.8.0.294/bin/mtouch \
+# Version: 9.8.1.4 (c7sr0: 3cf8aae)
+# [first argument, ignore] # /Users/mww121/Desktop/FlushArcade/PACKT Publishing/Xamarin Blueprints/Chapters/Chapter 4/AudioPlayer/AudioPlayer.iOS/mtouch.exe
+/Library/Frameworks/Xamarin.iOS.framework/Versions/9.8.1.4/bin/mtouch \
 	--cache \
-	/Users/mww121/Projects/AudioPlayer/AudioPlayer.iOS/obj/iPhoneSimulator/Debug/mtouch-cache \
+	"/Users/mww121/Desktop/FlushArcade/PACKT Publishing/Xamarin Blueprints/Chapters/Chapter 4/AudioPlayer/AudioPlayer.iOS/obj/iPhoneSimulator/Debug/mtouch-cache" \
 	--sim \
-	/Users/mww121/Projects/AudioPlayer/AudioPlayer.iOS/bin/iPhoneSimulator/Debug/AudioPlayer.iOS.app \
+	"/Users/mww121/Desktop/FlushArcade/PACKT Publishing/Xamarin Blueprints/Chapters/Chapter 4/AudioPlayer/AudioPlayer.iOS/bin/iPhoneSimulator/Debug/AudioPlayer.iOS.app" \
 	--executable \
 	AudioPlayer.iOS \
 	--fastdev \
@@ -22,7 +22,7 @@
 	--tls-provider=default \
 	--abi=i386 \
 	--symbollist \
-	/Users/mww121/Projects/AudioPlayer/AudioPlayer.iOS/obj/iPhoneSimulator/Debug/mtouch-symbols.list \
+	"/Users/mww121/Desktop/FlushArcade/PACKT Publishing/Xamarin Blueprints/Chapters/Chapter 4/AudioPlayer/AudioPlayer.iOS/obj/iPhoneSimulator/Debug/mtouch-symbols.list" \
 	--dsym=no \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.dll \
@@ -31,23 +31,23 @@
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Xamarin.iOS.dll \
 	-r \
-	/Users/mww121/Projects/AudioPlayer/packages/MvvmCross.Platform.4.1.0/lib/Xamarin.iOS10/MvvmCross.Platform.iOS.dll \
+	"/Users/mww121/Desktop/FlushArcade/PACKT Publishing/Xamarin Blueprints/Chapters/Chapter 4/AudioPlayer/packages/MvvmCross.Platform.4.1.0/lib/Xamarin.iOS10/MvvmCross.Platform.iOS.dll" \
 	-r \
-	/Users/mww121/Projects/AudioPlayer/packages/MvvmCross.Platform.4.1.0/lib/Xamarin.iOS10/MvvmCross.Platform.dll \
+	"/Users/mww121/Desktop/FlushArcade/PACKT Publishing/Xamarin Blueprints/Chapters/Chapter 4/AudioPlayer/packages/MvvmCross.Platform.4.1.0/lib/Xamarin.iOS10/MvvmCross.Platform.dll" \
 	-r \
-	/Users/mww121/Projects/AudioPlayer/packages/MvvmCross.Core.4.1.0/lib/Xamarin.iOS10/MvvmCross.iOS.dll \
+	"/Users/mww121/Desktop/FlushArcade/PACKT Publishing/Xamarin Blueprints/Chapters/Chapter 4/AudioPlayer/packages/MvvmCross.Core.4.1.0/lib/Xamarin.iOS10/MvvmCross.iOS.dll" \
 	-r \
-	/Users/mww121/Projects/AudioPlayer/packages/MvvmCross.Core.4.1.0/lib/Xamarin.iOS10/MvvmCross.Core.dll \
+	"/Users/mww121/Desktop/FlushArcade/PACKT Publishing/Xamarin Blueprints/Chapters/Chapter 4/AudioPlayer/packages/MvvmCross.Core.4.1.0/lib/Xamarin.iOS10/MvvmCross.Core.dll" \
 	-r \
-	/Users/mww121/Projects/AudioPlayer/packages/MvvmCross.Binding.4.1.0/lib/Xamarin.iOS10/MvvmCross.Binding.iOS.dll \
+	"/Users/mww121/Desktop/FlushArcade/PACKT Publishing/Xamarin Blueprints/Chapters/Chapter 4/AudioPlayer/packages/MvvmCross.Binding.4.1.0/lib/Xamarin.iOS10/MvvmCross.Binding.iOS.dll" \
 	-r \
-	/Users/mww121/Projects/AudioPlayer/packages/MvvmCross.Binding.4.1.0/lib/Xamarin.iOS10/MvvmCross.Binding.dll \
+	"/Users/mww121/Desktop/FlushArcade/PACKT Publishing/Xamarin Blueprints/Chapters/Chapter 4/AudioPlayer/packages/MvvmCross.Binding.4.1.0/lib/Xamarin.iOS10/MvvmCross.Binding.dll" \
 	-r \
-	/Users/mww121/Projects/AudioPlayer/packages/MvvmCross.Binding.4.1.0/lib/Xamarin.iOS10/MvvmCross.Localization.dll \
+	"/Users/mww121/Desktop/FlushArcade/PACKT Publishing/Xamarin Blueprints/Chapters/Chapter 4/AudioPlayer/packages/MvvmCross.Binding.4.1.0/lib/Xamarin.iOS10/MvvmCross.Localization.dll" \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Core.dll \
 	-r \
-	/Users/mww121/Projects/AudioPlayer/bin/Debug/AudioPlayer.Portable.dll \
+	"/Users/mww121/Desktop/FlushArcade/PACKT Publishing/Xamarin Blueprints/Chapters/Chapter 4/AudioPlayer/bin/Debug/AudioPlayer.Portable.dll" \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/mscorlib.dll \
 	-r \
@@ -283,21 +283,21 @@
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Facades/System.Xml.Xsl.Primitives.dll \
 	-r \
-	/Users/mww121/Projects/AudioPlayer/packages/MvvmCross.Platform.4.1.0/lib/Xamarin.iOS10/MvvmCross.Platform.iOS.dll \
+	"/Users/mww121/Desktop/FlushArcade/PACKT Publishing/Xamarin Blueprints/Chapters/Chapter 4/AudioPlayer/packages/MvvmCross.Platform.4.1.0/lib/Xamarin.iOS10/MvvmCross.Platform.iOS.dll" \
 	-r \
-	/Users/mww121/Projects/AudioPlayer/packages/MvvmCross.Platform.4.1.0/lib/Xamarin.iOS10/MvvmCross.Platform.dll \
+	"/Users/mww121/Desktop/FlushArcade/PACKT Publishing/Xamarin Blueprints/Chapters/Chapter 4/AudioPlayer/packages/MvvmCross.Platform.4.1.0/lib/Xamarin.iOS10/MvvmCross.Platform.dll" \
 	-r \
-	/Users/mww121/Projects/AudioPlayer/packages/MvvmCross.Core.4.1.0/lib/Xamarin.iOS10/MvvmCross.iOS.dll \
+	"/Users/mww121/Desktop/FlushArcade/PACKT Publishing/Xamarin Blueprints/Chapters/Chapter 4/AudioPlayer/packages/MvvmCross.Core.4.1.0/lib/Xamarin.iOS10/MvvmCross.iOS.dll" \
 	-r \
-	/Users/mww121/Projects/AudioPlayer/packages/MvvmCross.Core.4.1.0/lib/Xamarin.iOS10/MvvmCross.Core.dll \
+	"/Users/mww121/Desktop/FlushArcade/PACKT Publishing/Xamarin Blueprints/Chapters/Chapter 4/AudioPlayer/packages/MvvmCross.Core.4.1.0/lib/Xamarin.iOS10/MvvmCross.Core.dll" \
 	-r \
-	/Users/mww121/Projects/AudioPlayer/packages/MvvmCross.Binding.4.1.0/lib/Xamarin.iOS10/MvvmCross.Binding.iOS.dll \
+	"/Users/mww121/Desktop/FlushArcade/PACKT Publishing/Xamarin Blueprints/Chapters/Chapter 4/AudioPlayer/packages/MvvmCross.Binding.4.1.0/lib/Xamarin.iOS10/MvvmCross.Binding.iOS.dll" \
 	-r \
-	/Users/mww121/Projects/AudioPlayer/packages/MvvmCross.Binding.4.1.0/lib/Xamarin.iOS10/MvvmCross.Binding.dll \
+	"/Users/mww121/Desktop/FlushArcade/PACKT Publishing/Xamarin Blueprints/Chapters/Chapter 4/AudioPlayer/packages/MvvmCross.Binding.4.1.0/lib/Xamarin.iOS10/MvvmCross.Binding.dll" \
 	-r \
-	/Users/mww121/Projects/AudioPlayer/packages/MvvmCross.Binding.4.1.0/lib/Xamarin.iOS10/MvvmCross.Localization.dll \
+	"/Users/mww121/Desktop/FlushArcade/PACKT Publishing/Xamarin Blueprints/Chapters/Chapter 4/AudioPlayer/packages/MvvmCross.Binding.4.1.0/lib/Xamarin.iOS10/MvvmCross.Localization.dll" \
 	-r \
-	/Users/mww121/Projects/AudioPlayer/bin/Debug/AudioPlayer.Portable.dll \
+	"/Users/mww121/Desktop/FlushArcade/PACKT Publishing/Xamarin Blueprints/Chapters/Chapter 4/AudioPlayer/bin/Debug/AudioPlayer.Portable.dll" \
 	--target-framework \
 	"Xamarin.iOS,v1.0" \
-	/Users/mww121/Projects/AudioPlayer/AudioPlayer.iOS/bin/iPhoneSimulator/Debug//AudioPlayer.iOS.exe \
+	"/Users/mww121/Desktop/FlushArcade/PACKT Publishing/Xamarin Blueprints/Chapters/Chapter 4/AudioPlayer/AudioPlayer.iOS/bin/iPhoneSimulator/Debug//AudioPlayer.iOS.exe" \

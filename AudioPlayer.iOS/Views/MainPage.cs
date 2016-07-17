@@ -59,7 +59,7 @@ namespace AudioPlayer.iOS.Views
 				TranslatesAutoresizingMaskIntoConstraints = false
 			};
 
-			this.View.Add (mainView);
+			View.Add (mainView);
 
 			// add buttons to the main view
 			mainView.Add (imageView);
@@ -67,8 +67,8 @@ namespace AudioPlayer.iOS.Views
 			mainView.Add (audioPlayerButton);
 			mainView.Add (exitButton);
 
-			this.View.AddConstraints (NSLayoutConstraint.FromVisualFormat("V:|[mainView]|", NSLayoutFormatOptions.DirectionLeftToRight, null, new NSDictionary("mainView", mainView)));
-			this.View.AddConstraints (NSLayoutConstraint.FromVisualFormat("H:|[mainView]|", NSLayoutFormatOptions.AlignAllTop, null, new NSDictionary ("mainView", mainView)));
+			View.AddConstraints (NSLayoutConstraint.FromVisualFormat("V:|[mainView]|", NSLayoutFormatOptions.DirectionLeftToRight, null, new NSDictionary("mainView", mainView)));
+			View.AddConstraints (NSLayoutConstraint.FromVisualFormat("H:|[mainView]|", NSLayoutFormatOptions.AlignAllTop, null, new NSDictionary ("mainView", mainView)));
 
 			mainView.AddConstraints (NSLayoutConstraint.FromVisualFormat("V:|-100-[imageView(200)]-50-[descriptionLabel]-50-[audioPlayerButton]-[exitButton]", NSLayoutFormatOptions.DirectionLeftToRight, null, new NSDictionary("imageView", imageView, "descriptionLabel", descriptionLabel, "audioPlayerButton", audioPlayerButton, "exitButton", exitButton)));
 			mainView.AddConstraints (NSLayoutConstraint.FromVisualFormat("H:|-5-[imageView]-5-|", NSLayoutFormatOptions.AlignAllTop, null, new NSDictionary("imageView", imageView)));
